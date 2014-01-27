@@ -1,0 +1,7 @@
+<h1>Change it up</h1> <br>
+<h3>Enter new random string for: <%= @link.full_link %></h3>
+
+<%= form_for :link, url: "/go/:placeholdervariableidontcare", method: :patch do |f| %>
+    <%= f.text_field :random_string, placeholder: @link.random_string, class: "index_box" %> 
+    <%= f.submit "Change string" %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Welcome to Ritly</h1> <br>
+<h3>Generate a shortened URL below:</h3><br>
+<%= form_for :link, url: "/go" do |f| %>
+    <%= f.text_field :full_link, placeholder: "Enter a url to shorten e.g. www.espn.com", class: "index_box" %> 
+    <%= f.submit "Shorten link" %>
+<% end %>

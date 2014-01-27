@@ -1,0 +1,12 @@
+<h1>Your shortened URL is:</h1> 
+<em><h2>localhost:3000/go/<%= @link.random_string %></h2></em>
+
+<h1>It will take you to here:</h1> 
+<em><h2><%= link_to @link.full_link, redirect_path, method: :get %></h2></em><br>
+
+<iframe src="<%= @link.full_link %>"></iframe>
+
+<div> <iframe src=<%= "#{@link.full_link}" %>></iframe></div>
+
+<%= @link.full_link %>
+
