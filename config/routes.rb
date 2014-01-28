@@ -6,12 +6,9 @@ Ritly::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   get'/signin' => 'sessions#new'
   
-  get "sessions/new"
-  get "sessions/destroy"
-  get "users/new"
-  get "users/show"
-  get "users/create"
-  root 'links#index'
+
+  #ritly routes
+  root to: 'links#index'
   
   get '/all', to: 'links#all'
   
@@ -23,7 +20,7 @@ Ritly::Application.routes.draw do
   
   delete '/go/:id', to: 'links#delete'
 
-  get '/go/:placeholdervariableidontcare/edit', to: 'links#edit'
+  # get '/go/:placeholdervariableidontcare/edit', to: 'links#edit'
   
   # patch '/go/:placeholdervariableidontcare', to: 'links#update'  
 

@@ -37,6 +37,8 @@ gem 'pry', :group => :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+#take this out if you want to fix something in assets
+gem 'quiet_assets', :group => :development
 
 
 # Use unicorn as the app server

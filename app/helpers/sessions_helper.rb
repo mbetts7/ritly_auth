@@ -9,11 +9,11 @@ module SessionsHelper
     # current_user is avilable in controllers and views!
     # This is an is an assignment, which we must define - see below
     # note that next line is a call to setter 'def current_user=(user)' below
-    current_user = user
+    @current_user = user
   end
 
   def signed_in?
-    !current_user.nil?
+    !@current_user.nil?
   end
 
   # Authorization: signed_in_user is called in a before_filter
