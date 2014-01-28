@@ -1,5 +1,16 @@
 Ritly::Application.routes.draw do
+
+  resources :users, :sessions
+
+  get '/signup' => 'users#new'
+  delete '/signout', to: 'sessions#destroy'
+  get'/signin' => 'sessions#new'
   
+  get "sessions/new"
+  get "sessions/destroy"
+  get "users/new"
+  get "users/show"
+  get "users/create"
   root 'links#index'
   
   get '/all', to: 'links#all'

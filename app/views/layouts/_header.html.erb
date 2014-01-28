@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  
+  <div class="navbar-inner">
+    <div class="container">  
+      <nav>
+        
+        <ul class="nav pull-right">
+            <% if signed_in? %>
+              <%= link_to "My profile", current_user %><br>
+              <%= link_to "Sign out", signout_path, method: "delete" %>
+            <% else %>
+              <%= link_to "Sign up", signup_path %><br>
+              <%= link_to "Sign in", signin_path %>
+            <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -7,9 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<br>
+<br>
+<div class="container-fluid">
+	
+<%= render 'layouts/header' %>
+<section>
+	<div class="row-fluid">
+    <div class="span2">
+      <ul class="nav nav-tabs nav-stacked">
+        <li><%= link_to('Books', root_path) %></li>
+        <li><%= link_to('Recipes', root_path) %></li>
+        <li><%= link_to('Ingredients', root_path) %></li>
+      </ul>
+    </div>
 	<div class="container">
 		<%= yield %>
 	</div>
+	<div>
+	<%= debug(params) if Rails.env.development? %>
+	<%= debug(session) if Rails.env.development? %>
+	<%= debug(cookies) if Rails.env.development? %>
+	</div>
+</section>
+
+</div>
 
 </body>
 </html>
