@@ -20,8 +20,8 @@ Ritly::Application.routes.draw do
   
   delete '/go/:id', to: 'links#delete'
 
-  # get '/go/:placeholdervariableidontcare/edit', to: 'links#edit'
+  get '/go/:placeholdervariableidontcare/edit', to: 'links#edit'
   
-  # patch '/go/:placeholdervariableidontcare', to: 'links#update'  
+  patch '/go/:placeholdervariableidontcare', to: 'links#update'  
 
 end

@@ -10,12 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user=User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+    @user.name.capitalize!
     if @user.save
-      flash[:success] = "Welcome to the Cook Book app!"
+      flash[:success] = "Welcome to the Ritly!"
       sign_in @user
       redirect_to @user
     else
-      render'new'
+      render 'new'
     end
   end
 

@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+	before_filter :signed_in_user, only: [:create, :index, :edit, :update]
 
 	def index
 	end
@@ -46,15 +47,15 @@ class LinksController < ApplicationController
 	end
 
 	def update
-		gen_string = Link.find(params[:placeholdervariableidontcare])
-		# gen_string.update_attributes(params.([:link][:random_string])
+		get
+		# @link.random_string = params[:link][:random_string]
+		updated_info = params.require(:link).permit(:random_string)
+		@link.update_attributes(updated_info)
 
-		redirect_to all_path
-		# t = Link.find(#)
-		# t.random_string = new random_string
-		# t.save
-		# validates_length_of :random_string, :minimum => 10
-		# validates_presence_of :status ...equal to true or fales
+		# redirect_to all_path
+		# redirect_to preview_path  //=> this doesn't work
+		redirect_to "/go/#{@link.random_string}/preview"
+		
 	end
 
 	def delete
@@ -63,6 +64,10 @@ class LinksController < ApplicationController
 		redirect_to all_path
 	end
 
-	
+	private
+
+	def get
+		@link = Link.find(params[:placeholdervariableidontcare])		
+	end
 
 end
